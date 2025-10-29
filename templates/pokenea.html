@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pokenea.nombre }} - Pokenea</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #D4A574 0%, #C9986B 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .pokenea-name {
+            color: #8B4513;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .image-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #F5DEB3 0%, #DEB887 100%);
+            border-radius: 15px;
+        }
+        .pokenea-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .frase {
+            font-style: italic;
+            font-size: 1.3em;
+            color: #555;
+            margin: 30px 0;
+            padding: 20px;
+            background: #FFF8DC;
+            border-left: 5px solid #8B4513;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+        .frase::before {
+            content: '"';
+            font-size: 2em;
+            color: #8B4513;
+        }
+        .frase::after {
+            content: '"';
+            font-size: 2em;
+            color: #8B4513;
+        }
+        .container-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #F0F0F0;
+            border-radius: 10px;
+            font-family: monospace;
+        }
+        .container-info strong {
+            color: #8B4513;
+        }
+        .btn-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .btn-home:hover {
+            transform: translateY(-2px);
+        }
+        .refresh-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #CD853F 0%, #DEB887 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔥 Pokeneas - Pokédex Paisa 🔥</h1>
+    </div>
+    
+    <div class="container">
+        <div class="pokenea-name">{{ pokenea.nombre }}</div>
+        
+        <div class="image-container">
+            <img src="{{ imagen_url }}" 
+                 alt="{{ pokenea.nombre }}" 
+                 class="pokenea-image"
+                 onerror="this.src='https://via.placeholder.com/400x400?text=Imagen+No+Disponible'">
+        </div>
+        
+        <div class="frase">
+            {{ pokenea.frase }}
+        </div>
+        
+        <div class="container-info">
+            <strong>Contenedor ID:</strong> {{ container_id }}
+        </div>
+        
+        <a href="javascript:location.reload()" class="refresh-btn">
+            🔄 Ver Otro Pokenea
+        </a>
+        
+        <br>
+        
+        <a href="/" class="btn-home">
+            🏠 Volver al Inicio
+        </a>
+    </div>
+</body>
+</html>
