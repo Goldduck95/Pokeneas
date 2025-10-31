@@ -1,8 +1,8 @@
-# app/__init__.py
+# pokeneas_app/__init__.py
 import os
 from flask import Flask
-from app.routes import main
-from app.utils import validate_environment
+from pokeneas_app.routes import main
+from pokeneas_app.utils import validate_environment
 
 def create_app():
     """

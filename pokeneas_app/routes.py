@@ -1,7 +1,7 @@
-# app/routes.py
+# pokeneas_app/routes.py
 from flask import Blueprint, jsonify, render_template
-from app.models import get_random_pokenea, get_all_pokeneas
-from app.utils import get_container_id, get_s3_image_url
+from pokeneas_app.models import get_random_pokenea, get_all_pokeneas
+from pokeneas_app.utils import get_container_id, get_s3_image_url
 
 # Crea un Blueprint para organizar las rutas
 main = Blueprint('main', __name__)
