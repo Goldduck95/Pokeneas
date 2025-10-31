@@ -1,4 +1,5 @@
 # app/__init__.py
+import os
 from flask import Flask
 from app.routes import main
 from app.utils import validate_environment
@@ -11,8 +12,8 @@ def create_app():
                 template_folder='../templates',
                 static_folder='../static')
     
-    # Configuración básica
-    app.config['SECRET_KEY'] = 'dev-key-change-in-production'
+    # Configuración básica usando variables de entorno
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-key-change-in-production')
     app.config['JSON_AS_ASCII'] = False  # Para caracteres españoles
     
     # Registrar el blueprint con las rutas

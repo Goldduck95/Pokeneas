@@ -9,6 +9,7 @@ S3_BUCKET = os.environ.get('S3_BUCKET', 'pokeneas-images-2025')
 S3_REGION = os.environ.get('S3_REGION', 'us-east-1')
 AWS_ACCESS_KEY = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_SESSION_TOKEN = os.environ.get('AWS_SESSION_TOKEN')  
 
 
 def get_container_id():
@@ -22,12 +23,18 @@ def get_container_id():
 def get_s3_client():
     """Crea y devuelve un cliente de S3 configurado"""
     try:
-        s3_client = boto3.client(
-            's3',
-            region_name=S3_REGION,
-            aws_access_key_id=AWS_ACCESS_KEY,
-            aws_secret_access_key=AWS_SECRET_KEY
-        )
+        # Configuración base
+        config = {
+            'region_name': S3_REGION,
+            'aws_access_key_id': AWS_ACCESS_KEY,
+            'aws_secret_access_key': AWS_SECRET_KEY
+        }
+        
+        
+        if AWS_SESSION_TOKEN:
+            config['aws_session_token'] = AWS_SESSION_TOKEN
+        
+        s3_client = boto3.client('s3', **config)
         return s3_client
     except Exception as e:
         print(f"Error creando cliente S3: {e}")
@@ -38,7 +45,7 @@ def get_s3_image_url(image_name):
     """
     Genera la URL pública de una imagen en S3.
     
-    Args:
+    Args:   
         image_name: nombre del archivo en S3
     
     Returns:
@@ -95,5 +102,10 @@ def validate_environment():
         print(f"⚠️ Variables de entorno faltantes: {', '.join(missing_vars)}")
         return False
     
-    print("✓ Todas las variables de entorno están configuradas")
+    # Informar si se está usando session token (cuentas educativas)
+    if os.environ.get('AWS_SESSION_TOKEN'):
+        print("✓ Todas las variables de entorno están configuradas (con AWS_SESSION_TOKEN)")
+    else:
+        print("✓ Todas las variables de entorno están configuradas")
+    
     return True

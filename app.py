@@ -1,4 +1,9 @@
 # app.py
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde el archivo .env
+load_dotenv()
+
 from app import create_app
 
 app = create_app()

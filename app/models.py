@@ -37,59 +37,59 @@ class Pokenea:
 POKENEAS_DATA = [
     Pokenea(
         id=1,
-        nombre="Bandejon",
-        altura=1.5,
-        habilidad="Servir porciones abundantes",
-        imagen="bandejon.png",
-        frase="La vida es como un bandejo paisa, hay que disfrutarla completa"
+        nombre="Soplete",
+        altura=1.6,
+        habilidad="Inhalar mas que una aspiradora",
+        imagen="soplete.jpg",
+        frase="Donde es hoy manito que estoy que me soplo"
     ),
     Pokenea(
         id=2,
-        nombre="Arrepiso",
+        nombre="El 420",
         altura=0.8,
-        habilidad="Calentar recuerdos",
-        imagen="arrepiso.png",
-        frase="Del arrepentimiento nace la sabiduría"
+        habilidad="Weed Master",
+        imagen="420.jpg",
+        frase="Vamos a pegarlo"
     ),
     Pokenea(
         id=3,
-        nombre="Mazamorra",
+        nombre="Vizajoso",
         altura=0.6,
-        habilidad="Endulzar el alma",
-        imagen="mazamorra.png",
-        frase="La paciencia es la madre de todas las virtudes"
+        habilidad="Intimidación",
+        imagen="vizajoso.jpg",
+        frase="Cucho decime la hora"
     ),
     Pokenea(
         id=4,
-        nombre="Paisamon",
+        nombre="Celador",
         altura=2.1,
-        habilidad="Representar la cultura paisa",
-        imagen="paisamon.png",
-        frase="Parcero, la vida es muy berraca para no disfrutarla"
+        habilidad="Alta visición",
+        imagen="celador.jpg",
+        frase="Manito va colaborar pa la celada"
     ),
     Pokenea(
         id=5,
-        nombre="Arepon",
+        nombre="Gota gota",
         altura=0.3,
-        habilidad="Acompañar cualquier comida",
-        imagen="arepon.png",
-        frase="Lo importante no es el tamaño, sino el sabor que aportas"
+        habilidad="Robo",
+        imagen="gota.jpg",
+        frase="Chuga ya reunio lo del patron"
     ),
     Pokenea(
         id=6,
-        nombre="Choripaisa",
+        nombre="Barrista",
         altura=1.2,
-        habilidad="Alegrar las tardes",
-        imagen="choripaisa.png",
-        frase="Con chimichurri todo sabe mejor"
+        habilidad="Alta fidelidad",
+        imagen="barrista.jpg",
+        frase="Uy niño el que se meta con mi equipo se mete conmigo"
     ),
     Pokenea(
         id=7,
-        nombre="Empanador",
+        nombre="Pampara",
         altura=0.9,
-        habilidad="Crujir perfectamente",
-        imagen="empanador.png",
-        frase="Por fuera crujiente, por dentro suave, así es la vida"
+        habilidad="Luminiscencia",
+        imagen="pampara.jpg",
+        frase="Manito no me ves estas pintas yo soy la pampara"
     ),
 ]
 
